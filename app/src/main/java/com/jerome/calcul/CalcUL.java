@@ -93,7 +93,7 @@ public class CalcUL {
     }
 
     private void inputOperation(String myTag) {
-        if (!operand1.toString().equals("") && !operation.toString().equals("")) {
+        if (!operand1.toString().equals("") && !operation.toString().equals("") && pending_operand) {
             inputEqual();
         }
         setOperand1(display.toString());

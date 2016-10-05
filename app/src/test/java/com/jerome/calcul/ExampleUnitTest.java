@@ -98,4 +98,14 @@ public class ExampleUnitTest {
         myCalc.manageAction("*");
         assertEquals("5", myCalc.manageAction("5"));
     }
+    @Test
+    public void checkWaitOperandAfterEqualThenOperation() throws Exception {
+        CalcUL myCalc = new CalcUL();
+        myCalc.manageAction("C");
+        myCalc.manageAction("8");
+        myCalc.manageAction("*");
+        myCalc.manageAction("4");
+        myCalc.manageAction("=");
+        assertEquals("32", myCalc.manageAction("*"));
+    }
 }
