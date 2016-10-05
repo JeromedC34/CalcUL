@@ -20,27 +20,27 @@
         android:id="@+id/text_result"
         android:layout_height="0dp"
         android:layout_width="0dp"
+        android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
         android:layout_columnWeight="3"
         android:layout_columnSpan="3"
         android:gravity="end|center_vertical"
-        android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_margin="5sp"
         android:padding="5sp"
-        android:text="0"
-        android:background="#000000"
-        android:textColor="#ffffff" />
+        android:background="@color/primary_text"
+        android:textColor="@color/icons"
+        android:text="@string/calc_default_value" />
 
     <Button
         android:id="@+id/btn_c"
         android:layout_height="0dp"
         android:layout_width="0dp"
+        android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
-        android:layout_gravity="fill_horizontal|fill_vertical"
         android:onClick="manageAction"
         android:tag="C"
-        android:text="C" />
+        android:text="@string/calc_clear" />
 
     <Button
         android:id="@+id/btn_7"
@@ -51,7 +51,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="7"
-        android:text="7" />
+        android:text="@string/calc_seven" />
 
     <Button
         android:id="@+id/btn_8"
@@ -62,7 +62,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="8"
-        android:text="8" />
+        android:text="@string/calc_eight" />
 
     <Button
         android:id="@+id/btn_9"
@@ -73,7 +73,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="9"
-        android:text="9" />
+        android:text="@string/calc_nine" />
 
     <Button
         android:id="@+id/btn_div"
@@ -84,7 +84,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="/"
-        android:text="/" />
+        android:text="@string/calc_divider" />
 
     <Button
         android:id="@+id/btn_4"
@@ -95,7 +95,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="4"
-        android:text="4" />
+        android:text="@string/calc_four" />
 
     <Button
         android:id="@+id/btn_5"
@@ -106,7 +106,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="5"
-        android:text="5" />
+        android:text="@string/calc_five" />
 
     <Button
         android:id="@+id/btn_6"
@@ -117,7 +117,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="6"
-        android:text="6" />
+        android:text="@string/calc_six" />
 
     <Button
         android:id="@+id/btn_mul"
@@ -128,7 +128,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="*"
-        android:text="X" />
+        android:text="@string/calc_multiplier" />
 
     <Button
         android:id="@+id/btn_1"
@@ -139,7 +139,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="1"
-        android:text="1" />
+        android:text="@string/calc_one" />
 
     <Button
         android:id="@+id/btn_2"
@@ -150,7 +150,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="2"
-        android:text="2" />
+        android:text="@string/calc_two" />
 
     <Button
         android:id="@+id/btn_3"
@@ -161,7 +161,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="3"
-        android:text="3" />
+        android:text="@string/calc_three" />
 
     <Button
         android:id="@+id/btn_min"
@@ -172,7 +172,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="-"
-        android:text="-" />
+        android:text="@string/calc_minus" />
 
     <Button
         android:id="@+id/btn_0"
@@ -184,7 +184,7 @@
         android:layout_columnWeight="2"
         android:onClick="manageAction"
         android:tag="0"
-        android:text="0" />
+        android:text="@string/calc_zero" />
 
     <Button
         android:id="@+id/btn_dot"
@@ -195,7 +195,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="."
-        android:text="." />
+        android:text="@string/calc_decimal_separator" />
 
     <Button
         android:id="@+id/btn_add"
@@ -206,7 +206,7 @@
         android:layout_columnWeight="1"
         android:onClick="manageAction"
         android:tag="+"
-        android:text="+" />
+        android:text="@string/calc_plus" />
 
     <Button
         android:id="@+id/btn_equ"
@@ -215,8 +215,8 @@
         android:layout_columnSpan="4"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:layout_columnWeight="4"
+        android:onClick="manageAction"
         android:tag="="
-        android:text="=" />
+        android:text="@string/calc_equal" />
 </GridLayout>
