@@ -17,6 +17,7 @@ public class ExampleUnitTest {
     @Test
     public void checkInputDigit() throws Exception {
         CalcUL myCalc = new CalcUL();
+        myCalc.manageAction("C");
         assertEquals("1", myCalc.manageAction("1"));
     }
     @Test
@@ -78,5 +79,23 @@ public class ExampleUnitTest {
         myCalc.manageAction("*");
         myCalc.manageAction("2");
         assertEquals("16", myCalc.manageAction("+"));
+    }
+    @Test
+    public void checkNewNumberInputAfterCompute() throws Exception {
+        CalcUL myCalc = new CalcUL();
+        myCalc.manageAction("C");
+        myCalc.manageAction("8");
+        myCalc.manageAction("*");
+        myCalc.manageAction("2");
+        myCalc.manageAction("=");
+        assertEquals("5", myCalc.manageAction("5"));
+    }
+    @Test
+    public void checkNoExtraZeroInInput() throws Exception {
+        CalcUL myCalc = new CalcUL();
+        myCalc.manageAction("C");
+        myCalc.manageAction("8");
+        myCalc.manageAction("*");
+        assertEquals("5", myCalc.manageAction("5"));
     }
 }

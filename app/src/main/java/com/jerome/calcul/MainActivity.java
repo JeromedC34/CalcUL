@@ -1,7 +1,7 @@
 package com.jerome.calcul;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.text_result);
         textView.setText(calcUL.getDisplay());
     }
-    public void manageAction(View view) {
 
+    public void manageAction(View view) {
         textView.setText(calcUL.manageAction(view.getTag().toString()));
     }
 }
