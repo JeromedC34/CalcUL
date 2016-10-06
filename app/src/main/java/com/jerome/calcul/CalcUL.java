@@ -33,6 +33,11 @@ public class CalcUL {
         return display.toString();
     }
 
+    private void setDisplay(String value) {
+        display.delete(0, display.length());
+        display.append(value.replaceAll("\\.0*$", ""));
+    }
+
     private void setDisplay(double value) {
         setDisplay(String.valueOf(value).replaceAll("\\.0*$", ""));
     }
@@ -50,11 +55,6 @@ public class CalcUL {
             inputEqual();
         }
         return getDisplay();
-    }
-
-    private void setDisplay(String value) {
-        display.delete(0, display.length());
-        display.append(value.replaceAll("\\.0*$", ""));
     }
 
     private void inputClear() {
@@ -102,7 +102,8 @@ public class CalcUL {
         setPendingOperation(myTag);
         setPendingOperand(false);
     }
-    private double getOperand1(){
+
+    private double getOperand1() {
         double current_operand1;
         if (operand1.toString().equals("")) {
             current_operand1 = getOperand2();
@@ -111,6 +112,12 @@ public class CalcUL {
         }
         return current_operand1;
     }
+
+    private void setOperand1(String value) {
+        operand1.delete(0, operand1.length());
+        operand1.append(value);
+    }
+
     private double getOperand2() {
         double current_operand2;
         if (operand2.toString().equals("")) {
@@ -123,12 +130,19 @@ public class CalcUL {
         setPendingOperand(false);
         return current_operand2;
     }
+
+    private void setOperand2(String value) {
+        operand2.delete(0, operand2.length());
+        operand2.append(value);
+    }
+
     private void checkPendingOperation() {
         if (!pending_operation.toString().equals("")) {
             setOperation(pending_operation.toString());
             setPendingOperation("");
         }
     }
+
     private void inputEqual() {
         double current_operand1 = getOperand1();
         double current_operand2 = getOperand2();
@@ -173,16 +187,6 @@ public class CalcUL {
     private double doAdd(double operand1, double operand2) {
         double current_result = operand1 + operand2;
         return current_result;
-    }
-
-    private void setOperand1(String value) {
-        operand1.delete(0, operand1.length());
-        operand1.append(value);
-    }
-
-    private void setOperand2(String value) {
-        operand2.delete(0, operand2.length());
-        operand2.append(value);
     }
 
     private void stockPendingOperation() {
