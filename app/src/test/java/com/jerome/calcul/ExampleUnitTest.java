@@ -1,5 +1,6 @@
 package com.jerome.calcul;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,26 +11,24 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    CalcUL myCalc;
+    @Before
+    public void init() {
+        myCalc = new CalcUL();
     }
     @Test
     public void checkInputDigit() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         assertEquals("1", myCalc.manageAction("1"));
     }
     @Test
     public void checkInputCommaDigit() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction(".");
         assertEquals("0.1", myCalc.manageAction("1"));
     }
     @Test
     public void checkComputePlus() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("2");
         myCalc.manageAction("+");
@@ -38,7 +37,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkComputeMinus() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("9");
         myCalc.manageAction("-");
@@ -47,7 +45,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkComputeTimes() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("2");
         myCalc.manageAction("*");
@@ -56,7 +53,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkComputeDiv() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("8");
         myCalc.manageAction("/");
@@ -65,7 +61,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkComputeWithoutSecondOperand() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("8");
         myCalc.manageAction("*");
@@ -73,7 +68,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkComputeSeveralOperationsWithoutEqual() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("8");
         myCalc.manageAction("*");
@@ -82,7 +76,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkNewNumberInputAfterCompute() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("8");
         myCalc.manageAction("*");
@@ -92,7 +85,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkNoExtraZeroInInput() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("8");
         myCalc.manageAction("*");
@@ -100,7 +92,6 @@ public class ExampleUnitTest {
     }
     @Test
     public void checkWaitOperandAfterEqualThenOperation() throws Exception {
-        CalcUL myCalc = new CalcUL();
         myCalc.manageAction("C");
         myCalc.manageAction("8");
         myCalc.manageAction("*");
