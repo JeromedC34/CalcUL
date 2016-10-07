@@ -10,9 +10,11 @@ public class MainActivity extends AppCompatActivity {
     private final static String defaultValue = "0";
     private static CalcUL calcUL = new CalcUL();
     private static String display = defaultValue;
-    private static String lastOperand = "";
+    private static String lastOperand1 = "";
+    private static String lastOperand2 = "";
     private static String lastOperation = "";
-    private static boolean operandBeingInput = false;
+    private static String nextOperation = "";
+    private static boolean operandBeingInput = true;
     private TextView textView;
 
     @Override
@@ -24,7 +26,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void manageAction(View view) {
-        switch (view.getTag().toString()) {
+        doAction(view.getTag().toString());
+    }
+
+    private void setDisplay() {
+        textView.setText(display);
+    }
+
+    private void setDisplay(String newDisplay) {
+        display = newDisplay.replaceAll("^0*([0-9]+)([\\.0-9]+)", "$1$2");
+        setDisplay();
+    }
+
+    private void setDisplay(double newDisplay) {
+        display = String.valueOf(newDisplay).replaceAll("\\.0*$", "");
+        setDisplay();
+    }
+
+    private void doAction(String myTag) {
+        switch (myTag) {
             case "C":
                 chooseClear();
                 break;
@@ -47,77 +67,92 @@ public class MainActivity extends AppCompatActivity {
                 chooseDecimalSeparator();
                 break;
             default: // digits
-                chooseDigit(view.getTag().toString());
+                chooseDigit(myTag);
                 break;
         }
     }
 
-    private void setDisplay() {
-        textView.setText(display);
-    }
-
-    private void setDisplay(String newDisplay) {
-        display = newDisplay;
-        setDisplay();
-    }
-
-    private void setDisplay(double newDisplay) {
-        display = String.valueOf(newDisplay).replaceAll("\\.0*$", "");
-        setDisplay();
-    }
-
-    private void setOperand() {
-        if (operandBeingInput) {
-            lastOperand = textView.getText().toString();
-            calcUL.setOperand(Double.valueOf(lastOperand));
-            operandBeingInput = false;
-        }
-    }
-
     private void chooseClear() {
-        calcUL.clear();
-        operandBeingInput = false;
+        operandBeingInput = true;
+        lastOperand1 = "";
+        lastOperand2 = "";
+        lastOperation = "";
+        nextOperation = "";
         setDisplay(defaultValue);
     }
 
     private void chooseDivide() {
-        setOperand();
-        setDisplay(calcUL.setDivide());
+        chooseEqual();
+        nextOperation = "/";
     }
 
     private void chooseMultiple() {
-        setOperand();
-        setDisplay(calcUL.setMultiple());
+        chooseEqual();
+        nextOperation = "*";
     }
 
     private void chooseMinus() {
-        setOperand();
-        setDisplay(calcUL.setMinus());
+        chooseEqual();
+        nextOperation = "-";
     }
 
     private void choosePlus() {
-        setOperand();
-        setDisplay(calcUL.setPlus());
+        chooseEqual();
+        nextOperation = "+";
+    }
+
+    private void setOperand() {
+        if (operandBeingInput) {
+            if (lastOperand1.equals("")) {
+                lastOperand1 = textView.getText().toString();
+            } else {
+                lastOperand2 = textView.getText().toString();
+            }
+            operandBeingInput = false;
+        }
     }
 
     private void chooseEqual() {
-        // while equal asked without new operand input the last operand (and operation) is re-used
-        if (!operandBeingInput && !lastOperand.equals("")) {
-            calcUL.setOperand(Double.valueOf(lastOperand));
+        String operation = "";
+        if (nextOperation.equals("")) {
+            if (!lastOperation.equals("")) { // equal input several times
+                operation = lastOperation;
+            } else { // nothing to compute
+                setOperand();
+            }
         } else {
             setOperand();
+            operation = nextOperation;
         }
-        setDisplay(calcUL.setEqual());
+        if (!operation.equals("") && !lastOperand1.equals("") && !lastOperand2.equals("")) {
+            switch (operation) {
+                case "+":
+                    setDisplay(calcUL.doPlus(Double.valueOf(lastOperand1), Double.valueOf(lastOperand2)));
+                    break;
+                case "-":
+                    setDisplay(calcUL.doMinus(Double.valueOf(lastOperand1), Double.valueOf(lastOperand2)));
+                    break;
+                case "*":
+                    setDisplay(calcUL.doMultiple(Double.valueOf(lastOperand1), Double.valueOf(lastOperand2)));
+                    break;
+                case "/":
+                    setDisplay(calcUL.doDivide(Double.valueOf(lastOperand1), Double.valueOf(lastOperand2)));
+                    break;
+            }
+            lastOperand1 = display;
+            lastOperation = operation;
+            nextOperation = "";
+        }
     }
 
     private void chooseDecimalSeparator() {
-        if (display.lastIndexOf(".") < 0) {
-            if (!operandBeingInput) {
-                operandBeingInput = true;
-                setDisplay(defaultValue + ".");
-            } else {
+        if (operandBeingInput) {
+            if (display.lastIndexOf(".") < 0) {
                 setDisplay(display + ".");
             }
+        } else {
+            operandBeingInput = true;
+            setDisplay(defaultValue + ".");
         }
     }
 
@@ -126,7 +161,11 @@ public class MainActivity extends AppCompatActivity {
             operandBeingInput = true;
             setDisplay(digit);
         } else {
-            setDisplay(display + digit);
+            if (display.equals(defaultValue)) {
+                setDisplay(digit);
+            } else {
+                setDisplay(display + digit);
+            }
         }
     }
 }
