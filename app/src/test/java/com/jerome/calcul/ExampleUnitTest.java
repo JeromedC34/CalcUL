@@ -15,88 +15,42 @@ public class ExampleUnitTest {
     @Before
     public void init() {
         myCalc = new CalcUL();
+        myCalc.clear();
     }
     @Test
-    public void checkInputDigit() throws Exception {
-        myCalc.manageAction("C");
-        assertEquals("1", myCalc.manageAction("1"));
+    public void checkPlus() throws Exception {
+        myCalc.setPlus(2);
+        assertEquals(10, myCalc.setEqual(8), 0);
     }
     @Test
-    public void checkInputCommaDigit() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction(".");
-        assertEquals("0.1", myCalc.manageAction("1"));
+    public void checkPlusWithDecimal() throws Exception {
+        myCalc.setPlus(2.2);
+        assertEquals(10.2, myCalc.setEqual(8), 0);
     }
     @Test
-    public void checkComputePlus() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("2");
-        myCalc.manageAction("+");
-        myCalc.manageAction("7");
-        assertEquals("9", myCalc.manageAction("="));
+    public void checkMinus() throws Exception {
+        myCalc.setMinus(18);
+        assertEquals(10, myCalc.setEqual(8), 0);
     }
     @Test
-    public void checkComputeMinus() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("9");
-        myCalc.manageAction("-");
-        myCalc.manageAction("7");
-        assertEquals("2", myCalc.manageAction("="));
+    public void checkMultiple() throws Exception {
+        myCalc.setMultiple(5);
+        assertEquals(10, myCalc.setEqual(2), 0);
     }
     @Test
-    public void checkComputeTimes() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("2");
-        myCalc.manageAction("*");
-        myCalc.manageAction("7");
-        assertEquals("14", myCalc.manageAction("="));
-    }
-    @Test
-    public void checkComputeDiv() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("8");
-        myCalc.manageAction("/");
-        myCalc.manageAction("2");
-        assertEquals("4", myCalc.manageAction("="));
-    }
-    @Test
-    public void checkComputeWithoutSecondOperand() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("8");
-        myCalc.manageAction("*");
-        assertEquals("64", myCalc.manageAction("="));
+    public void checkDivide() throws Exception {
+        myCalc.setDivide(50);
+        assertEquals(10, myCalc.setEqual(5), 0);
     }
     @Test
     public void checkComputeSeveralOperationsWithoutEqual() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("8");
-        myCalc.manageAction("*");
-        myCalc.manageAction("2");
-        assertEquals("16", myCalc.manageAction("+"));
+        myCalc.setMultiple(8);
+        assertEquals(16, myCalc.setPlus(2), 0);
     }
     @Test
     public void checkNewNumberInputAfterCompute() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("8");
-        myCalc.manageAction("*");
-        myCalc.manageAction("2");
-        myCalc.manageAction("=");
-        assertEquals("5", myCalc.manageAction("5"));
-    }
-    @Test
-    public void checkNoExtraZeroInInput() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("8");
-        myCalc.manageAction("*");
-        assertEquals("5", myCalc.manageAction("5"));
-    }
-    @Test
-    public void checkWaitOperandAfterEqualThenOperation() throws Exception {
-        myCalc.manageAction("C");
-        myCalc.manageAction("8");
-        myCalc.manageAction("*");
-        myCalc.manageAction("4");
-        myCalc.manageAction("=");
-        assertEquals("32", myCalc.manageAction("*"));
+        myCalc.setMultiple(8);
+        myCalc.setEqual(2);
+        assertEquals(5, myCalc.setPlus(5), 0);
     }
 }
