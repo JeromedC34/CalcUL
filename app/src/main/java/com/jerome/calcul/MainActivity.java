@@ -2,6 +2,7 @@ package com.jerome.calcul;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,8 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private final static String defaultValue = "0";
     private static CalcUL calcUL = new CalcUL();
     private static String display = defaultValue;
-    private static String lastOperand = "";
-    private static String lastOperation = "";
+    private static String lastOperand = "0";
     private static boolean operandBeingInput = false;
     private TextView textView;
 
@@ -24,32 +24,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void manageAction(View view) {
-        switch (view.getTag().toString()) {
-            case "C":
-                chooseClear();
-                break;
-            case "/":
-                chooseDivide();
-                break;
-            case "*":
-                chooseMultiple();
-                break;
-            case "-":
-                chooseMinus();
-                break;
-            case "+":
-                choosePlus();
-                break;
-            case "=":
-                chooseEqual();
-                break;
-            case ".":
-                chooseDecimalSeparator();
-                break;
-            default: // digits
-                chooseDigit(view.getTag().toString());
-                break;
+        try {
+            switch (view.getTag().toString()) {
+                case "C":
+                    chooseClear();
+                    break;
+                case "/":
+                    chooseDivide();
+                    break;
+                case "*":
+                    chooseMultiple();
+                    break;
+                case "-":
+                    chooseMinus();
+                    break;
+                case "+":
+                    choosePlus();
+                    break;
+                case "=":
+                    chooseEqual();
+                    break;
+                case ".":
+                    chooseDecimalSeparator();
+                    break;
+                default: // digits
+                    chooseDigit(view.getTag().toString());
+                    break;
+            }
+        } catch (CalcULException e) {
+            Log.e("my_error", "division by zero");
+            chooseClear();
+            setDisplay(getResources().getString(R.string.calc_division_by_zero));
         }
+
     }
 
     private void setDisplay() {
@@ -69,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     private void setOperand() {
         if (operandBeingInput) {
             lastOperand = textView.getText().toString();
-            calcUL.setOperand(Double.valueOf(lastOperand));
             operandBeingInput = false;
         }
     }
@@ -77,37 +83,33 @@ public class MainActivity extends AppCompatActivity {
     private void chooseClear() {
         calcUL.clear();
         operandBeingInput = false;
+        lastOperand = "0";
         setDisplay(defaultValue);
     }
 
-    private void chooseDivide() {
+    private void chooseDivide() throws CalcULException {
         setOperand();
-        setDisplay(calcUL.setDivide());
+        setDisplay(calcUL.setDivide(Double.valueOf(lastOperand)));
     }
 
-    private void chooseMultiple() {
+    private void chooseMultiple() throws CalcULException {
         setOperand();
-        setDisplay(calcUL.setMultiple());
+        setDisplay(calcUL.setMultiple(Double.valueOf(lastOperand)));
     }
 
-    private void chooseMinus() {
+    private void chooseMinus() throws CalcULException {
         setOperand();
-        setDisplay(calcUL.setMinus());
+        setDisplay(calcUL.setMinus(Double.valueOf(lastOperand)));
     }
 
-    private void choosePlus() {
+    private void choosePlus() throws CalcULException {
         setOperand();
-        setDisplay(calcUL.setPlus());
+        setDisplay(calcUL.setPlus(Double.valueOf(lastOperand)));
     }
 
-    private void chooseEqual() {
-        // while equal asked without new operand input the last operand (and operation) is re-used
-        if (!operandBeingInput && !lastOperand.equals("")) {
-            calcUL.setOperand(Double.valueOf(lastOperand));
-        } else {
-            setOperand();
-        }
-        setDisplay(calcUL.setEqual());
+    private void chooseEqual() throws CalcULException {
+        setOperand();
+        setDisplay(calcUL.setEqual(Double.valueOf(lastOperand)));
     }
 
     private void chooseDecimalSeparator() {

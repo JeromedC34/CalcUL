@@ -16,7 +16,7 @@ class CalcUL {
         operation = "";
     }
 
-    public void setOperand(double newOperand) {
+    public void setOperand(double newOperand) throws CalcULException  {
         if (!operation.equals("")) {
             operand = setCompute(operand, operation, newOperand);
         } else {
@@ -24,31 +24,36 @@ class CalcUL {
         }
     }
 
-    public double setDivide() {
+    public double setDivide(double newOperand) throws CalcULException  {
+        setOperand(newOperand);
         operation = "/";
         return operand;
     }
 
-    public double setMultiple() {
+    public double setMultiple(double newOperand) throws CalcULException  {
+        setOperand(newOperand);
         operation = "*";
         return operand;
     }
 
-    public double setMinus() {
+    public double setMinus(double newOperand) throws CalcULException  {
+        setOperand(newOperand);
         operation = "-";
         return operand;
     }
 
-    public double setPlus() {
+    public double setPlus(double newOperand) throws CalcULException  {
+        setOperand(newOperand);
         operation = "+";
         return operand;
     }
 
-    public double setEqual() {
+    public double setEqual(double newOperand) throws CalcULException  {
+        setOperand(newOperand);
         return operand;
     }
 
-    private double setCompute(double operand1, String operation, double operand2) {
+    private double setCompute(double operand1, String operation, double operand2) throws CalcULException  {
         switch (operation) {
             case "+":
                 return doPlus(operand1, operand2);
@@ -75,9 +80,9 @@ class CalcUL {
         return operand1 * operand2;
     }
 
-    private double doDivide(double operand1, double operand2) {
+    private double doDivide(double operand1, double operand2) throws CalcULException {
         if (operand2 == 0) {
-            throw new ArithmeticException("Division by zero!");
+            throw new CalcULException();
         } else {
             return operand1 / operand2;
         }

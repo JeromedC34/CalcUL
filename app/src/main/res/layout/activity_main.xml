@@ -32,7 +32,7 @@
         android:text="@string/calc_default_value" />
 
     <Button
-        android:id="@+id/btn_c"
+        android:id="@+id/btn_clear"
         android:layout_height="0dp"
         android:layout_width="0dp"
         android:layout_gravity="fill_horizontal|fill_vertical"
@@ -76,7 +76,7 @@
         android:text="@string/calc_nine" />
 
     <Button
-        android:id="@+id/btn_div"
+        android:id="@+id/btn_divide"
         android:layout_height="0dp"
         android:layout_width="0dp"
         android:layout_gravity="fill_horizontal|fill_vertical"
@@ -120,7 +120,7 @@
         android:text="@string/calc_six" />
 
     <Button
-        android:id="@+id/btn_mul"
+        android:id="@+id/btn_multiple"
         android:layout_height="0dp"
         android:layout_width="0dp"
         android:layout_gravity="fill_horizontal|fill_vertical"
@@ -164,7 +164,7 @@
         android:text="@string/calc_three" />
 
     <Button
-        android:id="@+id/btn_min"
+        android:id="@+id/btn_minus"
         android:layout_height="0dp"
         android:layout_width="0dp"
         android:layout_gravity="fill_horizontal|fill_vertical"
@@ -198,7 +198,7 @@
         android:text="@string/calc_decimal_separator" />
 
     <Button
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_plus"
         android:layout_height="0dp"
         android:layout_width="0dp"
         android:layout_gravity="fill_horizontal|fill_vertical"
@@ -209,7 +209,7 @@
         android:text="@string/calc_plus" />
 
     <Button
-        android:id="@+id/btn_equ"
+        android:id="@+id/btn_equal"
         android:layout_height="0dp"
         android:layout_width="0dp"
         android:layout_columnSpan="4"
