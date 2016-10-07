@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         if (operandBeingInput) {
             lastOperand = textView.getText().toString();
             operandBeingInput = false;
+        } else if (lastOperand.equals("")) {
+            lastOperand = display;
         }
     }
 
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
     private void chooseEqual() throws CalcULException {
         setOperand();
         setDisplay(calcUL.setEqual(Double.valueOf(lastOperand)));
+        lastOperand = "";
     }
 
     private void chooseDecimalSeparator() {

@@ -16,7 +16,7 @@ class CalcUL {
         operation = "";
     }
 
-    public void setOperand(double newOperand) throws CalcULException  {
+    private void setOperand(double newOperand) throws CalcULException  {
         if (!operation.equals("")) {
             operand = setCompute(operand, operation, newOperand);
         } else {
@@ -50,7 +50,9 @@ class CalcUL {
 
     public double setEqual(double newOperand) throws CalcULException  {
         setOperand(newOperand);
-        return operand;
+        double result = operand;
+        clear();
+        return result;
     }
 
     private double setCompute(double operand1, String operation, double operand2) throws CalcULException  {
