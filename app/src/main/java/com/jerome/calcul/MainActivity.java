@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static String defaultValue = "0";
+    private static final String DEFAULT_VALUE = "0";
     private static CalcUL calcUL = new CalcUL();
-    private static String display = defaultValue;
+    private static String display = DEFAULT_VALUE;
     private static String lastOperand = "0";
     private static boolean operandBeingInput = false;
     private TextView textView;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         if (operandBeingInput) {
             lastOperand = textView.getText().toString();
             operandBeingInput = false;
-        } else if (lastOperand.equals("")) {
+        } else if ("".equals(lastOperand)) {
             lastOperand = display;
         }
     }
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         calcUL.clear();
         operandBeingInput = false;
         lastOperand = "0";
-        setDisplay(defaultValue);
+        setDisplay(DEFAULT_VALUE);
     }
 
     private void chooseDivide() throws CalcULException {
@@ -116,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void chooseDecimalSeparator() {
-        if (display.lastIndexOf(".") < 0) {
+        if (display.lastIndexOf('.') < 0) {
             if (!operandBeingInput) {
                 operandBeingInput = true;
-                setDisplay(defaultValue + ".");
+                setDisplay(DEFAULT_VALUE + ".");
             } else {
                 setDisplay(display + ".");
             }

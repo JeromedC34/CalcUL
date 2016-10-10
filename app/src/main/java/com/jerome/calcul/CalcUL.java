@@ -1,5 +1,7 @@
 package com.jerome.calcul;
 
+import java.math.BigDecimal;
+
 /**
  * Created by Human Booster on 04/10/2016.
  */
@@ -17,7 +19,7 @@ class CalcUL {
     }
 
     private void setOperand(double newOperand) throws CalcULException  {
-        if (!operation.equals("")) {
+        if (!"".equals(operation)) {
             operand = setCompute(operand, operation, newOperand);
         } else {
             operand = newOperand;
@@ -83,7 +85,9 @@ class CalcUL {
     }
 
     private double doDivide(double operand1, double operand2) throws CalcULException {
-        if (operand2 == 0) {
+        BigDecimal op1 = BigDecimal.valueOf(operand2);
+        BigDecimal op2 = BigDecimal.valueOf(0);
+        if (op1 == op2) {
             throw new CalcULException();
         } else {
             return operand1 / operand2;
