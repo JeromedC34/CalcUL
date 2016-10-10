@@ -149,20 +149,20 @@ public class CheckUI {
     }
 
     @Test
-    public void checkInputDigit() throws Exception {
+    public void checkInputDigit() throws CalcULException {
         onView(withId(R.id.btn_1)).perform(click());
         onView(withId(R.id.text_result)).check(matches(withText("1")));
     }
 
     @Test
-    public void checkInputCommaDigit() throws Exception {
+    public void checkInputCommaDigit() throws CalcULException {
         onView(withId(R.id.btn_dot)).perform(click());
         onView(withId(R.id.btn_1)).perform(click());
         onView(withId(R.id.text_result)).check(matches(withText("0.1")));
     }
 
     @Test
-    public void checkComputePlus() throws Exception {
+    public void checkComputePlus() throws CalcULException {
         onView(withId(R.id.btn_2)).perform(click());
         onView(withId(R.id.btn_plus)).perform(click());
         onView(withId(R.id.btn_7)).perform(click());
@@ -171,7 +171,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkComputeMinus() throws Exception {
+    public void checkComputeMinus() throws CalcULException {
         onView(withId(R.id.btn_9)).perform(click());
         onView(withId(R.id.btn_minus)).perform(click());
         onView(withId(R.id.btn_7)).perform(click());
@@ -180,7 +180,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkComputeTimes() throws Exception {
+    public void checkComputeTimes() throws CalcULException {
         onView(withId(R.id.btn_2)).perform(click());
         onView(withId(R.id.btn_multiple)).perform(click());
         onView(withId(R.id.btn_7)).perform(click());
@@ -189,7 +189,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkComputeDiv() throws Exception {
+    public void checkComputeDiv() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_divide)).perform(click());
         onView(withId(R.id.btn_2)).perform(click());
@@ -198,7 +198,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkComputeWithoutSecondOperand() throws Exception {
+    public void checkComputeWithoutSecondOperand() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_multiple)).perform(click());
         onView(withId(R.id.btn_equal)).perform(click());
@@ -206,7 +206,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkComputeSeveralOperationsWithoutEqual() throws Exception {
+    public void checkComputeSeveralOperationsWithoutEqual() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_multiple)).perform(click());
         onView(withId(R.id.btn_2)).perform(click());
@@ -215,7 +215,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkNewNumberInputAfterCompute() throws Exception {
+    public void checkNewNumberInputAfterCompute() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_multiple)).perform(click());
         onView(withId(R.id.btn_2)).perform(click());
@@ -225,7 +225,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkNoExtraZeroInInput() throws Exception {
+    public void checkNoExtraZeroInInput() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_multiple)).perform(click());
         onView(withId(R.id.btn_5)).perform(click());
@@ -233,7 +233,7 @@ public class CheckUI {
     }
 
     @Test
-    public void checkWaitOperandAfterEqualThenOperation() throws Exception {
+    public void checkWaitOperandAfterEqualThenOperation() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_multiple)).perform(click());
         onView(withId(R.id.btn_4)).perform(click());
@@ -243,14 +243,14 @@ public class CheckUI {
     }
 
     @Test
-    public void checkClear() throws Exception {
+    public void checkClear() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_clear)).perform(click());
         onView(withId(R.id.text_result)).check(matches(withText("0")));
     }
 
     @Test
-    public void checkDivisionByZero() throws Exception {
+    public void checkDivisionByZero() throws CalcULException {
         onView(withId(R.id.btn_8)).perform(click());
         onView(withId(R.id.btn_divide)).perform(click());
         onView(withId(R.id.btn_0)).perform(click());

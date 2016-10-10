@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String DEFAULT_VALUE = "0";
     private static CalcUL calcUL = new CalcUL();
     private static String display = DEFAULT_VALUE;
-    private static String lastOperand = "0";
+    private static String lastOperand = DEFAULT_VALUE;
     private static boolean operandBeingInput = false;
     private TextView textView;
 
