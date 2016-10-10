@@ -1,0 +1,180 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_columnWeight="4"
+    android:layout_gravity="center"
+    android:layout_rowWeight="4"
+    android:background="@color/colorPrimary"
+    android:columnCount="4"
+    android:padding="0dp"
+    android:rowCount="4"
+    tools:context="com.jerome.calcul.MainActivity">
+
+    <Button
+        android:id="@+id/btn_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="7"
+        android:text="@string/calc_seven" />
+
+    <Button
+        android:id="@+id/btn_8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="8"
+        android:text="@string/calc_eight" />
+
+    <Button
+        android:id="@+id/btn_9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="9"
+        android:text="@string/calc_nine" />
+
+    <Button
+        android:id="@+id/btn_divide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="/"
+        android:text="@string/calc_divider" />
+
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="4"
+        android:text="@string/calc_four" />
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="5"
+        android:text="@string/calc_five" />
+
+    <Button
+        android:id="@+id/btn_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="6"
+        android:text="@string/calc_six" />
+
+    <Button
+        android:id="@+id/btn_multiple"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="*"
+        android:text="@string/calc_multiplier" />
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="1"
+        android:text="@string/calc_one" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="2"
+        android:text="@string/calc_two" />
+
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="3"
+        android:text="@string/calc_three" />
+
+    <Button
+        android:id="@+id/btn_minus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="-"
+        android:text="@string/calc_minus" />
+
+    <Button
+        android:id="@+id/btn_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="0"
+        android:text="@string/calc_zero" />
+
+    <Button
+        android:id="@+id/btn_dot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="."
+        android:text="@string/calc_decimal_separator" />
+
+    <Button
+        android:id="@+id/btn_plus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:onClick="manageAction"
+        android:tag="+"
+        android:text="@string/calc_plus" />
+
+</GridLayout>

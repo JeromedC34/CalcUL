@@ -1,0 +1,208 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_columnWeight="4"
+    android:layout_gravity="center"
+    android:layout_rowWeight="4"
+    android:background="@color/colorPrimary"
+    android:columnCount="4"
+    android:padding="0dp"
+    android:rowCount="4"
+    tools:context="com.jerome.calcul.MainActivity">
+
+    <Button
+        android:id="@+id/btn_sin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="sin"
+        android:text="@string/calc_sin" />
+
+    <Button
+        android:id="@+id/btn_cos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="cos"
+        android:text="@string/calc_cos" />
+
+    <Button
+        android:id="@+id/btn_tan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="tan"
+        android:text="@string/calc_tan" />
+
+    <Button
+        android:id="@+id/btn_pow_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="pow_2"
+        android:text="@string/calc_pow_2" />
+
+
+    <Button
+        android:id="@+id/btn_sin_inv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="sinh"
+        android:text="@string/calc_sin_inv" />
+
+    <Button
+        android:id="@+id/btn_cos_inv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="cosh"
+        android:text="@string/calc_cos_inv" />
+
+    <Button
+        android:id="@+id/btn_tan_inv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="tanh"
+        android:text="@string/calc_tan_inv" />
+
+    <Button
+        android:id="@+id/btn_pow_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="pow_3"
+        android:text="@string/calc_pow_3" />
+
+    <Button
+        android:id="@+id/btn_e_pow_x"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="e_pow_x"
+        android:text="@string/calc_e_pow_x" />
+
+    <Button
+        android:id="@+id/btn_10_pow_x"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="10_pow_x"
+        android:text="@string/calc_10_pow_x" />
+
+    <Button
+        android:id="@+id/btn_1_div_x"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="1_div_x"
+        android:text="@string/calc_1_div_x" />
+
+    <Button
+        android:id="@+id/btn_x_pow_y"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="x_pow_y"
+        android:text="@string/calc_x_pow_y" />
+
+    <Button
+        android:id="@+id/btn_ln"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="ln"
+        android:text="@string/calc_ln" />
+
+    <Button
+        android:id="@+id/btn_log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="log"
+        android:text="@string/calc_log" />
+
+    <Button
+        android:id="@+id/btn_sqrl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="sqrl"
+        android:text="@string/calc_sqrl" />
+
+    <Button
+        android:id="@+id/btn_plus_minus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:layout_rowWeight="1"
+        android:textSize="18dp"
+        android:onClick="manageAction"
+        android:tag="plus_minus"
+        android:text="@string/calc_plus_minus" />
+
+</GridLayout>

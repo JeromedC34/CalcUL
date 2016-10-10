@@ -10,9 +10,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:columnCount="4"
+    android:columnCount="8"
     android:rowCount="6"
-    android:layout_columnWeight="4"
+    android:layout_columnWeight="8"
     android:layout_rowWeight="6"
     tools:context="com.jerome.calcul.MainActivity">
 
@@ -22,8 +22,8 @@
         android:layout_width="0dp"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:layout_columnWeight="3"
-        android:layout_columnSpan="3"
+        android:layout_columnWeight="7"
+        android:layout_columnSpan="7"
         android:gravity="end|center_vertical"
         android:layout_margin="5sp"
         android:padding="5sp"
@@ -42,24 +42,32 @@
         android:tag="C"
         android:text="@string/calc_clear" />
 
-    <fragment
-        android:name="com.jerome.calcul.NormalFragment"
+    <fragment android:name="com.jerome.calcul.ScientificFragment"
+        android:id="@+id/fragmentScientific"
+        android:layout_rowWeight="4"
+        android:layout_columnWeight="4"
+        android:layout_columnSpan="4"
+        android:layout_rowSpan="4"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <fragment android:name="com.jerome.calcul.NormalFragment"
         android:id="@+id/fragmentNormal"
         android:layout_rowWeight="4"
         android:layout_columnWeight="4"
         android:layout_columnSpan="4"
         android:layout_rowSpan="4"
-        android:layout_height="0dp"
-        android:layout_width="0dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 
     <Button
         android:id="@+id/btn_equal"
         android:layout_height="0dp"
         android:layout_width="0dp"
-        android:layout_columnSpan="4"
+        android:layout_columnSpan="8"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:layout_columnWeight="4"
+        android:layout_columnWeight="8"
         android:onClick="manageAction"
         android:tag="="
         android:text="@string/calc_equal" />
