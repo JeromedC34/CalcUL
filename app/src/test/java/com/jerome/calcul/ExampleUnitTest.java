@@ -53,4 +53,9 @@ public class ExampleUnitTest {
         myCalc.setEqual(2);
         assertEquals(5, myCalc.setPlus(5), 0);
     }
+    @Test
+    public void checkXPowY() throws Exception {
+        myCalc.setXPowY(8);
+        assertEquals(64, myCalc.setEqual(2), 0);
+    }
 }

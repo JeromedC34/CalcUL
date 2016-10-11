@@ -46,6 +46,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return display;
     }
 
+    protected void setDisplay(String newDisplay) {
+        display = newDisplay;
+        setDisplay();
+    }
+
     protected void setDisplay(double newDisplay) {
         display = String.valueOf(newDisplay).replaceAll("\\.0*$", "");
         setDisplay();
@@ -53,11 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void setDisplay() {
         textView.setText(display);
-    }
-
-    protected void setDisplay(String newDisplay) {
-        display = newDisplay;
-        setDisplay();
     }
 
     protected void setOperand() {
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void chooseClear() {
         calcUL.clear();
         operandBeingInput = false;
-        lastOperand = "0";
+        lastOperand = DEFAULT_VALUE;
         setDisplay(DEFAULT_VALUE);
     }
 
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setOperand();
         setDisplay(calcUL.setEqual(Double.valueOf(lastOperand)));
     }
+
     private void initButtons() {
         int[] my_buttons = {R.id.btn_clear, R.id.btn_equal};
         Button button;

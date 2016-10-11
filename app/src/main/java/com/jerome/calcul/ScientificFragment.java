@@ -84,6 +84,11 @@ public class ScientificFragment extends Fragment implements View.OnClickListener
         }
     }
 
+    private void chooseXPowY() throws CalcULException {
+        mainActivity.setOperand();
+        mainActivity.setDisplay(mainActivity.calcUL.setXPowY(Double.valueOf(mainActivity.lastOperand)));
+    }
+
     private void chooseSin() throws CalcULException {
         mainActivity.setDisplay(mainActivity.calcUL.setSin(Double.valueOf(mainActivity.getDisplay())));
         mainActivity.setOperand(true);
@@ -136,11 +141,6 @@ public class ScientificFragment extends Fragment implements View.OnClickListener
 
     private void choose1DivX() throws CalcULException {
         mainActivity.setDisplay(mainActivity.calcUL.set1DivX(Double.valueOf(mainActivity.getDisplay())));
-        mainActivity.setOperand(true);
-    }
-
-    private void chooseXPowY() throws CalcULException {
-        mainActivity.setDisplay(mainActivity.calcUL.setXPowY(Double.valueOf(mainActivity.getDisplay())));
         mainActivity.setOperand(true);
     }
 
