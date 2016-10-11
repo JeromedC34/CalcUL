@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected static final String DEFAULT_VALUE = "0";
     protected static CalcUL calcUL = new CalcUL();
     protected static String display = DEFAULT_VALUE;
-    protected static String lastOperand = DEFAULT_VALUE;
     protected static boolean operandBeingInput = false;
     protected TextView textView;
 
@@ -62,17 +61,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void setOperand() {
         if (operandBeingInput) {
-            lastOperand = textView.getText().toString();
             operandBeingInput = false;
-        } else if ("".equals(lastOperand)) {
-            lastOperand = display;
         }
     }
 
     protected void setOperand(boolean setFromDisplay) {
         if (setFromDisplay) {
-            lastOperand = textView.getText().toString();
             operandBeingInput = false;
+            calcUL.clear();
         } else {
             setOperand();
         }
@@ -81,13 +77,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void chooseClear() {
         calcUL.clear();
         operandBeingInput = false;
-        lastOperand = DEFAULT_VALUE;
         setDisplay(DEFAULT_VALUE);
     }
 
     private void chooseEqual() throws CalcULException {
         setOperand();
-        setDisplay(calcUL.setEqual(Double.valueOf(lastOperand)));
+        setDisplay(calcUL.setEqual(Double.valueOf(display)));
     }
 
     private void initButtons() {

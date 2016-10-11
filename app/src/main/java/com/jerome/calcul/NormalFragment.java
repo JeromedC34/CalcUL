@@ -56,22 +56,22 @@ public class NormalFragment extends Fragment implements View.OnClickListener {
 
     private void chooseDivide() throws CalcULException {
         mainActivity.setOperand();
-        mainActivity.setDisplay(mainActivity.calcUL.setDivide(Double.valueOf(mainActivity.lastOperand)));
+        mainActivity.setDisplay(mainActivity.calcUL.setDivide(Double.valueOf(mainActivity.display)));
     }
 
     private void chooseMultiple() throws CalcULException {
         mainActivity.setOperand();
-        mainActivity.setDisplay(mainActivity.calcUL.setMultiple(Double.valueOf(mainActivity.lastOperand)));
+        mainActivity.setDisplay(mainActivity.calcUL.setMultiple(Double.valueOf(mainActivity.display)));
     }
 
     private void chooseMinus() throws CalcULException {
         mainActivity.setOperand();
-        mainActivity.setDisplay(mainActivity.calcUL.setMinus(Double.valueOf(mainActivity.lastOperand)));
+        mainActivity.setDisplay(mainActivity.calcUL.setMinus(Double.valueOf(mainActivity.display)));
     }
 
     private void choosePlus() throws CalcULException {
         mainActivity.setOperand();
-        mainActivity.setDisplay(mainActivity.calcUL.setPlus(Double.valueOf(mainActivity.lastOperand)));
+        mainActivity.setDisplay(mainActivity.calcUL.setPlus(Double.valueOf(mainActivity.display)));
     }
 
     private void chooseDecimalSeparator() {

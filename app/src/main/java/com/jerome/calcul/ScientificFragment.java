@@ -86,7 +86,7 @@ public class ScientificFragment extends Fragment implements View.OnClickListener
 
     private void chooseXPowY() throws CalcULException {
         mainActivity.setOperand();
-        mainActivity.setDisplay(mainActivity.calcUL.setXPowY(Double.valueOf(mainActivity.lastOperand)));
+        mainActivity.setDisplay(mainActivity.calcUL.setXPowY(Double.valueOf(mainActivity.display)));
     }
 
     private void chooseSin() throws CalcULException {
