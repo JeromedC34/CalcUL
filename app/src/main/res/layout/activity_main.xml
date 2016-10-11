@@ -38,7 +38,6 @@
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
-        android:onClick="manageAction"
         android:tag="C"
         android:text="@string/calc_clear" />
 
@@ -60,7 +59,6 @@
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
         android:layout_columnWeight="4"
-        android:onClick="manageAction"
         android:tag="="
         android:text="@string/calc_equal" />
 </GridLayout>

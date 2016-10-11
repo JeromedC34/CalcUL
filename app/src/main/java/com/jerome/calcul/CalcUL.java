@@ -18,7 +18,7 @@ class CalcUL {
         operation = "";
     }
 
-    private void setOperand(double newOperand) throws CalcULException  {
+    private void setOperand(double newOperand) throws CalcULException {
         if (!"".equals(operation)) {
             operand = setCompute(operand, operation, newOperand);
         } else {
@@ -26,38 +26,43 @@ class CalcUL {
         }
     }
 
-    public double setDivide(double newOperand) throws CalcULException  {
+    public double setDivide(double newOperand) throws CalcULException {
         setOperand(newOperand);
         operation = "/";
         return operand;
     }
 
-    public double setMultiple(double newOperand) throws CalcULException  {
+    public double setMultiple(double newOperand) throws CalcULException {
         setOperand(newOperand);
         operation = "*";
         return operand;
     }
 
-    public double setMinus(double newOperand) throws CalcULException  {
+    public double setMinus(double newOperand) throws CalcULException {
         setOperand(newOperand);
         operation = "-";
         return operand;
     }
 
-    public double setPlus(double newOperand) throws CalcULException  {
+    public double setPlus(double newOperand) throws CalcULException {
         setOperand(newOperand);
         operation = "+";
         return operand;
     }
 
-    public double setEqual(double newOperand) throws CalcULException  {
+    public double setXPowY(double newOperand) throws CalcULException {
+        setOperand(newOperand);
+        operation = "x_pow_y";
+        return operand;
+    }
+
+    public double setEqual(double newOperand) throws CalcULException {
         setOperand(newOperand);
         double result = operand;
-        clear();
         return result;
     }
 
-    private double setCompute(double operand1, String operation, double operand2) throws CalcULException  {
+    private double setCompute(double operand1, String operation, double operand2) throws CalcULException {
         switch (operation) {
             case "+":
                 return doPlus(operand1, operand2);
@@ -67,6 +72,8 @@ class CalcUL {
                 return doMultiple(operand1, operand2);
             case "/":
                 return doDivide(operand1, operand2);
+            case "x_pow_y":
+                return doXPowY(operand1, operand2);
             default:
                 return this.operand;
         }
@@ -93,4 +100,75 @@ class CalcUL {
             return operand1 / operand2;
         }
     }
+
+    public double setSin(double operand1) {
+        return Math.sin(Math.toRadians(operand1));
+    }
+
+    public double setCos(double operand1) {
+        return Math.cos(Math.toRadians(operand1));
+    }
+
+    public double setTan(double operand1) {
+        return Math.tan(Math.toRadians(operand1));
+    }
+
+    public double setXPow2(double operand1) {
+        return Math.pow(operand1, 2);
+    }
+
+    public double setSinInv(double operand1) {
+        return Math.toDegrees(Math.asin(operand1));
+    }
+
+    public double setCosInv(double operand1) {
+        return Math.toDegrees(Math.acos(operand1));
+    }
+
+    public double setTanInv(double operand1) {
+        return Math.toDegrees(Math.atan(operand1));
+    }
+
+    public double setXPow3(double operand1) {
+        return Math.pow(operand1, 3);
+    }
+
+    public double setEPowX(double operand1) {
+        return Math.pow(Math.E, operand1);
+    }
+
+    public double set10PowX(double operand1) {
+        return Math.pow(10, operand1);
+    }
+
+    public double set1DivX(double operand1) throws CalcULException {
+        BigDecimal op1 = BigDecimal.valueOf(operand1);
+        BigDecimal op2 = BigDecimal.valueOf(0);
+        if (op1 == op2) {
+            throw new CalcULException();
+        } else {
+            return 1 / operand1;
+        }
+    }
+
+    private double doXPowY(double operand1, double operand2) {
+        return Math.pow(operand1, operand2);
+    }
+
+    public double setLn(double operand1) {
+        return Math.log(operand1);
+    }
+
+    public double setLog(double operand1) {
+        return Math.log10(operand1);
+    }
+
+    public double setSqrt(double operand1) {
+        return Math.sqrt(operand1);
+    }
+
+    public double setPlusMinus(double operand1) {
+        return -1 * operand1;
+    }
+
 }

@@ -8,6 +8,7 @@
     android:background="@color/colorPrimary"
     android:columnCount="4"
     android:padding="0dp"
+    android:layout_margin="0dp"
     android:rowCount="4"
     tools:context="com.jerome.calcul.MainActivity">
 
@@ -18,7 +19,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="7"
         android:text="@string/calc_seven" />
 
@@ -29,7 +29,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="8"
         android:text="@string/calc_eight" />
 
@@ -40,7 +39,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="9"
         android:text="@string/calc_nine" />
 
@@ -51,7 +49,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="/"
         android:text="@string/calc_divider" />
 
@@ -62,7 +59,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="4"
         android:text="@string/calc_four" />
 
@@ -73,7 +69,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="5"
         android:text="@string/calc_five" />
 
@@ -84,7 +79,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="6"
         android:text="@string/calc_six" />
 
@@ -95,7 +89,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="*"
         android:text="@string/calc_multiplier" />
 
@@ -106,7 +99,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="1"
         android:text="@string/calc_one" />
 
@@ -117,7 +109,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="2"
         android:text="@string/calc_two" />
 
@@ -128,7 +119,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="3"
         android:text="@string/calc_three" />
 
@@ -139,7 +129,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="-"
         android:text="@string/calc_minus" />
 
@@ -151,7 +140,6 @@
         android:layout_columnWeight="2"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="0"
         android:text="@string/calc_zero" />
 
@@ -162,7 +150,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="."
         android:text="@string/calc_decimal_separator" />
 
@@ -173,7 +160,6 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:onClick="manageAction"
         android:tag="+"
         android:text="@string/calc_plus" />
 

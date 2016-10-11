@@ -8,6 +8,7 @@
     android:background="@color/colorPrimary"
     android:columnCount="4"
     android:padding="0dp"
+    android:layout_margin="0dp"
     android:rowCount="4"
     tools:context="com.jerome.calcul.MainActivity">
 
@@ -18,7 +19,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="sin"
         android:text="@string/calc_sin" />
@@ -30,7 +31,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="cos"
         android:text="@string/calc_cos" />
@@ -42,22 +43,22 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="tan"
         android:text="@string/calc_tan" />
 
     <Button
-        android:id="@+id/btn_pow_2"
+        android:id="@+id/btn_x_pow_2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
-        android:tag="pow_2"
-        android:text="@string/calc_pow_2" />
+        android:tag="x_pow_2"
+        android:text="@string/x_calc_pow_2" />
 
 
     <Button
@@ -67,9 +68,9 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
-        android:tag="sinh"
+        android:tag="sin_inv"
         android:text="@string/calc_sin_inv" />
 
     <Button
@@ -79,9 +80,9 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
-        android:tag="cosh"
+        android:tag="cos_inv"
         android:text="@string/calc_cos_inv" />
 
     <Button
@@ -91,22 +92,22 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
-        android:tag="tanh"
+        android:tag="tan_inv"
         android:text="@string/calc_tan_inv" />
 
     <Button
-        android:id="@+id/btn_pow_3"
+        android:id="@+id/btn_x_pow_3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
-        android:tag="pow_3"
-        android:text="@string/calc_pow_3" />
+        android:tag="x_pow_3"
+        android:text="@string/calc_x_pow_3" />
 
     <Button
         android:id="@+id/btn_e_pow_x"
@@ -115,7 +116,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="e_pow_x"
         android:text="@string/calc_e_pow_x" />
@@ -127,7 +128,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="10_pow_x"
         android:text="@string/calc_10_pow_x" />
@@ -139,7 +140,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="1_div_x"
         android:text="@string/calc_1_div_x" />
@@ -151,7 +152,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="x_pow_y"
         android:text="@string/calc_x_pow_y" />
@@ -164,7 +165,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="ln"
         android:text="@string/calc_ln" />
@@ -176,22 +177,22 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="log"
         android:text="@string/calc_log" />
 
     <Button
-        android:id="@+id/btn_sqrl"
+        android:id="@+id/btn_sqrt"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
-        android:tag="sqrl"
-        android:text="@string/calc_sqrl" />
+        android:tag="sqrt"
+        android:text="@string/calc_sqrt" />
 
     <Button
         android:id="@+id/btn_plus_minus"
@@ -200,7 +201,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:onClick="manageAction"
         android:tag="plus_minus"
         android:text="@string/calc_plus_minus" />
