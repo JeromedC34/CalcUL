@@ -4,68 +4,76 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_columnWeight="8"
     android:layout_gravity="center"
+    android:layout_rowWeight="6"
     android:background="@color/colorPrimary"
+    android:columnCount="8"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:columnCount="8"
     android:rowCount="6"
-    android:layout_columnWeight="8"
-    android:layout_rowWeight="6"
     tools:context="com.jerome.calcul.MainActivity">
 
-    <TextView
-        android:id="@+id/text_result"
-        android:layout_height="0dp"
+    <FrameLayout
         android:layout_width="0dp"
-        android:layout_gravity="fill_horizontal|fill_vertical"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="7"
+        android:layout_height="0dp"
         android:layout_columnSpan="7"
-        android:gravity="end|center_vertical"
-        android:padding="5sp"
-        android:background="@color/primary_text"
-        android:textColor="@color/icons"
-        android:text="@string/calc_default_value" />
+        android:layout_columnWeight="7"
+        android:layout_rowWeight="1"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_horizontal|fill_vertical"
+            android:background="@color/primary_text"
+            android:gravity="end|center_vertical"
+            android:padding="5sp"
+            android:text="@string/calc_default_value"
+            android:textColor="@color/icons" />
+    </FrameLayout>
 
     <Button
         android:id="@+id/btn_clear"
-        android:layout_height="0dp"
         android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
         android:tag="C"
         android:text="@string/calc_clear" />
 
-    <fragment android:name="com.jerome.calcul.ScientificFragment"
+    <fragment
         android:id="@+id/fragmentScientific"
-        android:layout_rowWeight="4"
-        android:layout_columnWeight="4"
-        android:layout_columnSpan="4"
-        android:layout_rowSpan="4"
+        android:name="com.jerome.calcul.ScientificFragment"
         android:layout_width="0dp"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_columnSpan="4"
+        android:layout_columnWeight="4"
+        android:layout_rowSpan="4"
+        android:layout_rowWeight="4" />
 
-    <fragment android:name="com.jerome.calcul.NormalFragment"
+    <fragment
         android:id="@+id/fragmentNormal"
-        android:layout_rowWeight="4"
-        android:layout_columnWeight="4"
-        android:layout_columnSpan="4"
-        android:layout_rowSpan="4"
+        android:name="com.jerome.calcul.NormalFragment"
         android:layout_width="0dp"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_columnSpan="4"
+        android:layout_columnWeight="4"
+        android:layout_rowSpan="4"
+        android:layout_rowWeight="4" />
 
     <Button
         android:id="@+id/btn_equal"
-        android:layout_height="0dp"
         android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_columnSpan="8"
+        android:layout_columnWeight="8"
         android:layout_gravity="fill_horizontal|fill_vertical"
         android:layout_rowWeight="1"
-        android:layout_columnWeight="8"
         android:tag="="
         android:text="@string/calc_equal" />
 </GridLayout>
