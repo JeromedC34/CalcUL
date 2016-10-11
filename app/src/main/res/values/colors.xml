@@ -12,4 +12,9 @@
     <color name="secondary_text">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+    <!-- for themes -->
+    <color name="colorPrimary1">#3F51B5</color>
+    <color name="colorPrimary2">#51B53F</color>
+    <color name="colorPrimary3">#B53F51</color>
+    <color name="colorPrimary4">#3FFF51</color>
 </resources>

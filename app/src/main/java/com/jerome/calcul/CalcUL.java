@@ -22,18 +22,6 @@ class CalcUL {
         lastOperation = "";
     }
 
-    private void setOperand(double newOperand) throws CalcULException {
-        if ("=".equals(operation) && !"".equals(lastOperation)) {
-            operand = setCompute(newOperand, lastOperation, lastOperand);
-        } else if (!"".equals(operation) && !"=".equals(operation)) {
-            operand = setCompute(operand, operation, newOperand);
-            lastOperand = newOperand;
-        } else {
-            operand = newOperand;
-            lastOperation = "";
-        }
-    }
-
     public double setDivide(double newOperand) throws CalcULException {
         lastOperation = "";
         setOperand(newOperand);
@@ -140,6 +128,18 @@ class CalcUL {
 
     public double setPlusMinus(double operand1) {
         return -1 * operand1;
+    }
+
+    private void setOperand(double newOperand) throws CalcULException {
+        if ("=".equals(operation) && !"".equals(lastOperation)) {
+            operand = setCompute(newOperand, lastOperation, lastOperand);
+        } else if (!"".equals(operation) && !"=".equals(operation)) {
+            operand = setCompute(operand, operation, newOperand);
+            lastOperand = newOperand;
+        } else {
+            operand = newOperand;
+            lastOperation = "";
+        }
     }
 
     private void setOperation(String newOperation) {

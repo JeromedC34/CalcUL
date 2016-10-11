@@ -35,4 +35,8 @@
     <string name="calc_log">log</string>
     <string name="calc_sqrt">sqrt</string>
     <string name="calc_plus_minus">+/-</string>
+    <string name="calc_theme1">Thème 1</string>
+    <string name="calc_theme2">Thème 2</string>
+    <string name="calc_theme3">Thème 3</string>
+    <string name="calc_theme4">Thème 4</string>
 </resources>

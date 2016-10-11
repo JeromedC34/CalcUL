@@ -58,4 +58,8 @@ public class ExampleUnitTest {
         myCalc.setXPowY(8);
         assertEquals(64, myCalc.setEqual(2), 0);
     }
+    @Test
+    public void checkPlusMinus() throws Exception {
+        assertEquals(-2, myCalc.setPlusMinus(2), 0);
+    }
 }

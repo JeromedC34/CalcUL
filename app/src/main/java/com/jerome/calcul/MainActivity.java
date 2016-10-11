@@ -1,6 +1,9 @@
 package com.jerome.calcul;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected static CalcUL calcUL = new CalcUL();
     protected static String display = DEFAULT_VALUE;
     protected static boolean operandBeingInput = false;
+    protected static int themeChosen = 1;
     protected TextView textView;
 
     @Override
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView = (TextView) findViewById(R.id.text_result);
         setDisplay(display);
         initButtons();
+        chooseTheme(themeChosen);
     }
 
     public void onClick(View view) {
@@ -32,6 +37,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case "=":
                     chooseEqual();
+                    break;
+                case "theme1":
+                    chooseTheme(1);
+                    break;
+                case "theme2":
+                    chooseTheme(2);
+                    break;
+                case "theme3":
+                    chooseTheme(3);
+                    break;
+                case "theme4":
+                    chooseTheme(4);
                     break;
             }
         } catch (CalcULException e) {
@@ -45,13 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return display;
     }
 
-    protected void setDisplay(String newDisplay) {
-        display = newDisplay;
+    protected void setDisplay(double newDisplay) {
+        display = String.valueOf(newDisplay).replaceAll("\\.0*$", "");
         setDisplay();
     }
 
-    protected void setDisplay(double newDisplay) {
-        display = String.valueOf(newDisplay).replaceAll("\\.0*$", "");
+    protected void setDisplay(String newDisplay) {
+        display = newDisplay;
         setDisplay();
     }
 
@@ -85,8 +102,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setDisplay(calcUL.setEqual(Double.valueOf(display)));
     }
 
+    protected void chooseTheme(int myTheme) {
+        int color = 1;
+        switch (myTheme) {
+            case 1:
+                color = ContextCompat.getColor(this, R.color.colorPrimary1);
+                break;
+            case 2:
+                color = ContextCompat.getColor(this, R.color.colorPrimary2);
+                break;
+            case 3:
+                color = ContextCompat.getColor(this, R.color.colorPrimary3);
+                break;
+            case 4:
+                color = ContextCompat.getColor(this, R.color.colorPrimary4);
+                break;
+        }
+        View baseView = findViewById(R.id.activity_main);
+        baseView.setBackgroundColor(color);
+        DrawerLayout mDrawerLayout;
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.closeDrawers();
+        themeChosen = myTheme;
+    }
+
     private void initButtons() {
-        int[] my_buttons = {R.id.btn_clear, R.id.btn_equal};
+        int[] my_buttons = {R.id.btn_clear, R.id.btn_equal, R.id.btn_theme1, R.id.btn_theme2, R.id.btn_theme3, R.id.btn_theme4};
         Button button;
         for (int i : my_buttons) {
             button = (Button) findViewById(i);
