@@ -180,8 +180,8 @@ class CalcUL {
 
     private double doDivide(double operand1, double operand2) throws CalcULException {
         BigDecimal op1 = BigDecimal.valueOf(operand2);
-        BigDecimal op2 = BigDecimal.valueOf(0);
-        if (op1 == op2) {
+        BigDecimal op2 = BigDecimal.valueOf(Double.valueOf(0));
+        if (op1.equals(op2)) {
             throw new CalcULException();
         } else {
             return operand1 / operand2;
