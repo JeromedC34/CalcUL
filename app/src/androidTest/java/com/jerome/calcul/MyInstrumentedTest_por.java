@@ -1,11 +1,14 @@
 package com.jerome.calcul;
 
+import android.content.pm.ActivityInfo;
 import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -13,10 +16,19 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class MyInstrumentedTest_por extends MyInstrumentedTest {
+
+    @Before
+    public void init() {
+        super.init();
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        getInstrumentation().waitForIdleSync();
+    }
+
     @Test
     public void btnSinInvisible() {
         onView(withId(R.id.btn_sin)).check(doesNotExist());
     }
+
     @Test
     public void btnCosInvisible() {
         onView(withId(R.id.btn_cos)).check(doesNotExist());
