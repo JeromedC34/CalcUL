@@ -1,7 +1,6 @@
 package com.jerome.calcul;
 
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -13,9 +12,9 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -34,7 +33,12 @@ public class MyInstrumentedTest {
 
     @Test
     public void btn1Visible() {
-        onView(withId(R.id.btn_1)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_1)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void btnSinInvisible() {
+        onView(withId(R.id.btn_sin)).check(doesNotExist());
     }
 
     @Test
@@ -44,47 +48,47 @@ public class MyInstrumentedTest {
 
     @Test
     public void btn3Visible() {
-        onView(withId(R.id.btn_3)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_3)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn4Visible() {
-        onView(withId(R.id.btn_4)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_4)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn5Visible() {
-        onView(withId(R.id.btn_5)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_5)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn6Visible() {
-        onView(withId(R.id.btn_6)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_6)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn7Visible() {
-        onView(withId(R.id.btn_7)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_7)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn8Visible() {
-        onView(withId(R.id.btn_8)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_8)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn9Visible() {
-        onView(withId(R.id.btn_9)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_9)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btn0Visible() {
-        onView(withId(R.id.btn_0)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_0)).check(matches(isDisplayed()));
     }
 
     @Test
     public void btnDotVisible() {
-        onView(withId(R.id.btn_dot)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.btn_dot)).check(matches(isDisplayed()));
     }
 
     @Test
