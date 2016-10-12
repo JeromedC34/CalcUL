@@ -59,9 +59,9 @@ project.gradle.taskGraph.whenReady {
     testDebugUnitTest {
         ignoreFailures = project.ext.ignoreTestFailures
     }
-    testReleaseUnitTest {
-        ignoreFailures = project.ext.ignoreTestFailures
-    }
+//    testReleaseUnitTest {
+//        ignoreFailures = project.ext.ignoreTestFailures
+//    }
 }
 
 // Jacoco coverage reports for standard unit tests
