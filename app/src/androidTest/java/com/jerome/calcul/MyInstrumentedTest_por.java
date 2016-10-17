@@ -3,6 +3,7 @@ package com.jerome.calcul;
 import android.content.pm.ActivityInfo;
 import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
@@ -19,9 +21,15 @@ public class MyInstrumentedTest_por extends MyInstrumentedTest {
 
     @Before
     public void init() {
-        super.init();
+        //super.init();
         mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getInstrumentation().waitForIdleSync();
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            Log.e("pb_on_sleep", "111");
+        }
+        onView(withId(R.id.btn_clear)).perform(click());
     }
 
     @Test
